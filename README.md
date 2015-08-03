@@ -5,8 +5,12 @@ Change text to image file.
 
 # Usage
 `$ npm i -g electron-prebuilt`
+
 `$ git clone git@github.com:tako-black/Aramin.git`
+
 `$ electron Aramin/`
+
 Input text to textarea.
+
 The text will be changed to image file below.
 

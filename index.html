@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Aramin</title>
+  <script type="text/javascript">
+  function multilineText(context, text, width) {
+    var len = text.length;
+    var strArray = [];
+    var tmp = "";
+    var i = 0;
+
+    if( len < 1 ){
+        //textの文字数が0だったら終わり
+        return strArray;
+    }
+
+    for( i = 0; i < len; i++ ){
+        var c = text.charAt(i);  //textから１文字抽出
+        if( c == "\n" ){
+            /* 改行コードの場合はそれまでの文字列を配列にセット */
+            strArray.push( tmp );
+            tmp = "";
+
+            continue;
+        }
+
+        /* contextの現在のフォントスタイルで描画したときの長さを取得 */
+        if (context.measureText( tmp + c ).width <= width){
+            /* 指定幅を超えるまでは文字列を繋げていく */
+            tmp += c;
+        }else{
+            /* 超えたら、それまでの文字列を配列にセット */
+            strArray.push( tmp );
+            tmp = c;
+        }
+    }
+
+    /* 繋げたままの分があれば回収 */
+    if( tmp.length > 0 )
+        strArray.push( tmp );
+
+    return strArray;
+  }
+
+  function change() {
+    var canvas = document.getElementById("canvas");
+    var text = document.getElementById("text");
+    var context = canvas.getContext("2d");
+    var ary = multilineText(context, text.value, 200);
+
+    context.font = "10pt Arial";
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.fillStyle = 'rgb(255,255,255)';
+    context.fillRect(0, 0, 500, 500);
+    context.fillStyle = 'rgb(0,0,0)';
+    for(var i = 0; i < ary.length; i++){
+      context.fillText(ary[i], 10, 50 + (i * 26));
+    }
+
+    var jpg = canvas.toDataURL();
+    document.getElementById("newImg").src = jpg;
+  };
+</script>
+</head>
+<body>
+  <canvas id="canvas" width="500" height="500" hidden="true"></canvas>
+  <textarea id= "text" onChange="change()"></textarea>
+  <div><img id="newImg"></div>
+</body>
+</html>

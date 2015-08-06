@@ -1,12 +1,24 @@
 {
   "name": "Aramin",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "Change text to image file",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tako-black/Aramin.git"
+  },
   "keywords": [],
   "author": "Kohei TAKATA",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tako-black/Aramin/issues"
+  },
+  "homepage": "https://github.com/tako-black/Aramin",
+  "preferGlobal": true,
+  "keywords": [
+    "Electron"
+  ]
 }

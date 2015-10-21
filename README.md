@@ -14,3 +14,6 @@ Input text to textarea.
 
 The text will be changed to image file below.
 
+# LICENSE
+MIT
+

@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:tako-black/Aramin.git"
+    "url": "git@github.com:kohei-takata/Aramin.git"
   },
   "keywords": [],
   "author": "Kohei TAKATA",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tako-black/Aramin/issues"
+    "url": "https://github.com/kohei-takata/Aramin/issues"
   },
-  "homepage": "https://github.com/tako-black/Aramin",
+  "homepage": "https://github.com/kohei-takata/Aramin",
   "preferGlobal": true,
   "keywords": [
     "Electron"
